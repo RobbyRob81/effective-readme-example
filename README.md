@@ -1,10 +1,5 @@
 # effective-readme-example
 
-
-
-# Acquisition Squad (Static-rendered Marketing Pages)
-
-
 ## Contents
 
 - [Project Dependencies](#technology)
@@ -49,7 +44,7 @@ You will need to be familiar with the following concepts.
 
 ## Branching Strategy
 
-[More here](https://aspirationpartners.atlassian.net/wiki/spaces/EN/pages/89292957/Aspiration+Branching+Strategy+and+Deployments)
+[More here](https://Company.atlassian.net/wiki/spaces/EN/pages/0000000/Company+Branching+Strategy+and+Deployments)
 
 ## Setup
 
@@ -60,9 +55,9 @@ Ping team (#engineering_frontend slack) for `.env` file contents.
 Clone the repository
 
 ```sh
-$ git clone git@github.com:AspirationPartners/acquisition-ui.git
+$ git clone git@github.com:CompanyPartners/repository.git
 
-Cloning into 'acquisition-ui'
+Cloning into 'repository'
 Receiving objects, done
 Receiving deltas, done
 ```
@@ -86,7 +81,7 @@ You may now either start dev
 ```sh
 $ yarn dev
 
-info  - Loaded env from /Users/rrtrosario/Documents/Github/acquisition-ui/.env
+info  - Loaded env from /Users/rrtrosario/Documents/Github/repository/.env
 The static directory has been deprecated in favor of the public directory. https://err.sh/vercel/next.js/static-dir-deprecated
 Warning: Built-in CSS support is being disabled due to custom CSS configuration being detected.
 See here for more info: https://err.sh/next.js/built-in-css-disabled
@@ -273,7 +268,7 @@ The new model for URL redirects is now 50% self-service!
 For example, to achieve a redirect like:
 
 ```
-https://www.aspiration.com/green ➝ https://www.aspiration.com/get-account-100?utm_source=DirectResults
+https://www.Company.com/green ➝ https://www.Company.com/get-account-100?utm_source=DirectResults
 ```
 
 you would simply create a file in `./redirects/` named `green` with the content `/get-account-100?utm_source=DirectResults`
@@ -287,11 +282,11 @@ You can then push this to your dev branch, but will need to coordinate with DevO
 Every push to origin results in a CircleCI build, and a Storybook. You need to be connected to VPN to view your Storybook, and they follow this pattern:
 
 ```
-https://build-artifacts.aspiration.io/acquisition-ui/storybook/18490/index.html
+https://build-artifacts.Company.io/repository/storybook/18490/index.html
                      Your CircleCI build number (found in URL) --^
 ```
 
-The latest `master` Storybook is always available at: https://build-artifacts.aspiration.io/acquisition-ui/storybook/index.html
+The latest `master` Storybook is always available at: https://build-artifact.Company.io/repository/storybook/index.html
 
 ## Workflow
 
@@ -320,8 +315,8 @@ feature/AU-0000-improve-read-me
 Every PR must have a sandbox URL associated with it. The sandbox must follow the next convention.
 
 ```
-https://rebrand.alpha.aspiration.com/<branch-name>/<page>
-https://rebrand.alpha.aspiration.com/feature/AU-0000-fix-ui/get-account
+https://rebrand.alpha.Company.com/<branch-name>/<page>
+https://rebrand.alpha.Company.com/feature/AU-0000-fix-ui/get-account
 ```
 
 Eventually this will be enforced by git or a GitHub check. Make sure to include a link to the Jira ticket in your PR (preferably at the very beginning).
@@ -334,7 +329,7 @@ At least one other engineer must approve your PR before it goes to QA. If your P
 
 ### Sandbox and Alpha
 
-Every branch that is pushed up with the branching pattern listed above should trigger a sandbox build in [CircleCI](https://app.circleci.com/pipelines/github/AspirationPartners/acquisition-ui). This is deployed as a _static_ generated build, just like production, so [none of the SSR features](https://nextjs.org/docs/advanced-features/static-html-export#unsupported-features) of Next.js will be available. Once your sandbox is built, it should be available at the URL noted above in [workflow](#workflow).
+Every branch that is pushed up with the branching pattern listed above should trigger a sandbox build in [CircleCI](https://app.circleci.com/pipelines/github/CompanyPartners/repository). This is deployed as a _static_ generated build, just like production, so [none of the SSR features](https://nextjs.org/docs/advanced-features/static-html-export#unsupported-features) of Next.js will be available. Once your sandbox is built, it should be available at the URL noted above in [workflow](#workflow).
 
 To deploy a ticket to alpha specifically, an `-alpha` release tag may be used (see instructions below), otherwise your changes will automatically go to the base alpha environment upon merging to master.
 
@@ -355,7 +350,7 @@ This method should be used for the majority of code releases, especially when th
 
 ##### Steps:
 
-1. Access the `acquisition-ui` releases page [here](https://github.com/<organization>/<repository>/releases)
+1. Access the `repository` releases page [here](https://github.com/<organization>/<repository>/releases)
 2. Make note of the current release version
 3. Click the "Draft a new release" button
 4. Enter the new tag number (see below for naming note) in the "Choose a tag" dropdown. Copy this tag name.
